@@ -1,0 +1,1402 @@
+/* ==========================================================================
+   PAGUREO — SISTEMA DE DISEÑO DE ALTA CONVERSIÓN
+   Producto Único: Sofá Multiconfort Adaptable
+   Canal de Cierre: WhatsApp
+   Paleta 60/30/10: 60% Blanco, 30% Azul (#0360AB), 10% Magenta (#C01B83)
+   ========================================================================== */
+
+:root {
+  /* Paleta 60 / 30 / 10 */
+  --bg-primary: #ffffff;
+  --bg-subtle: #f8fafd;
+  --bg-light-blue: #f0f6fc;
+  --bg-light-blue-card: #eff6ff;
+  --bg-light-magenta: #fdf0f7;
+  
+  --brand-blue: #0360ab;
+  --brand-blue-dark: #00457d;
+  --brand-blue-light: #e8f2fc;
+  --brand-blue-border: rgba(3, 96, 171, 0.2);
+  
+  --brand-magenta: #c01b83;
+  --brand-magenta-dark: #9e1069;
+  --brand-magenta-hover: #a81571;
+  --brand-magenta-glow: rgba(192, 27, 131, 0.25);
+  
+  --text-main: #0b1c30;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  
+  --border-subtle: #e2e8f0;
+  --border-light: #edf2f7;
+  
+  /* Sombras y Elevaciones */
+  --shadow-xs: 0 1px 3px rgba(11, 28, 48, 0.04);
+  --shadow-sm: 0 2px 8px rgba(11, 28, 48, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 28, 48, 0.07);
+  --shadow-lg: 0 16px 36px rgba(11, 28, 48, 0.09);
+  --shadow-magenta: 0 8px 24px rgba(192, 27, 131, 0.3);
+  --shadow-blue: 0 8px 24px rgba(3, 96, 171, 0.2);
+  
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-pill: 9999px;
+  
+  /* Transiciones */
+  --trans-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --trans-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Layout */
+  --container-max: 1180px;
+}
+
+/* --------------------------------------------------------------------------
+   RESET & TIPOGRAFÍA BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   ELEMENTOS DE ENCABEZADO DE SECCIÓN
+   -------------------------------------------------------------------------- */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  background-color: var(--bg-light-blue);
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue-border);
+}
+
+.section-badge.badge-magenta {
+  background-color: var(--bg-light-magenta);
+  color: var(--brand-magenta);
+  border-color: rgba(192, 27, 131, 0.2);
+}
+
+.section-badge .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--brand-magenta);
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 2.65rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.section-title span.accent-blue {
+  color: var(--brand-blue);
+}
+
+.section-title span.accent-magenta {
+  color: var(--brand-magenta);
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-header.text-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   BOTONES PAGUREO (CTA WHATSAPP)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition: all var(--trans-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--brand-magenta);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-magenta);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-magenta-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(192, 27, 131, 0.38);
+  color: #ffffff;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--bg-primary);
+  color: var(--brand-blue);
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  border-color: var(--brand-blue);
+  background-color: var(--bg-light-blue);
+  color: var(--brand-blue-dark);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+  gap: 12px;
+}
+
+.btn-sm {
+  padding: 9px 20px;
+  font-size: 0.86rem;
+  gap: 8px;
+}
+
+.whatsapp-icon-svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-lg .whatsapp-icon-svg {
+  width: 25px;
+  height: 25px;
+}
+
+/* --------------------------------------------------------------------------
+   BRAND LOGO (Hero Clean - Por fuera del cuadro de información)
+   -------------------------------------------------------------------------- */
+.hero-brand-standalone {
+  margin-bottom: 16px;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-brand-logo {
+  height: 34px;
+  width: auto;
+  max-width: 165px;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
+  background-color: transparent !important;
+  mix-blend-mode: normal !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION (Fondo 16:9 Nítido + Panel Flotante Translúcido a la Izquierda)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+/* Background visual 16:9 completo, nítido y saturado sin velo blanco sobre el producto */
+.hero-bg-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;
+  display: block;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Columna de contenido Hero: Logo por fuera + Cuadro de información */
+.hero-content-column {
+  width: 36%;
+  min-width: 380px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Panel translúcido blanco flotante (Contiene solo: badge, título, texto, CTA y micro-trust) */
+.hero-card-panel {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 28px;
+  padding: 38px 36px;
+  box-shadow: 0 16px 40px rgba(11, 28, 48, 0.10), 0 2px 8px rgba(11, 28, 48, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.hero-ctas .btn {
+  width: 100%;
+}
+
+.hero-micro-trust {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  width: 100%;
+}
+
+.micro-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.micro-trust-item .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--brand-blue);
+}
+
+/* --------------------------------------------------------------------------
+   2. SECCIÓN DOLORES (4 Tarjetas Concisas de Rutina & Comodidad)
+   -------------------------------------------------------------------------- */
+.pain-section {
+  padding: 88px 0;
+  background-color: var(--bg-light-blue);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.pain-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--trans-fast);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.pain-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(3, 96, 171, 0.35);
+  box-shadow: var(--shadow-md);
+}
+
+.pain-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light-magenta);
+  color: var(--brand-magenta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.pain-card-body h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.pain-card-body p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   3. SECCIÓN BENEFICIOS (Tarjetas Compañeras Simétricas)
+   -------------------------------------------------------------------------- */
+.benefits-section {
+  padding: 96px 0;
+  background-color: var(--bg-primary);
+}
+
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Tarjeta Izquierda de Imagen */
+.benefits-card-media {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  height: 100%;
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.benefits-card-media:hover {
+  border-color: rgba(3, 96, 171, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.benefits-image-box {
+  width: 100%;
+  flex: 1;
+  min-height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-subtle);
+}
+
+.benefits-img-4-5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefits-image-box:hover .benefits-img-4-5 {
+  transform: scale(1.025);
+}
+
+.benefits-media-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: var(--bg-light-blue);
+  border-radius: var(--radius-sm);
+  color: var(--brand-blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--brand-blue-border);
+}
+
+.benefits-media-badge .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--brand-blue);
+}
+
+/* Tarjeta Derecha de Contenido */
+.benefits-card-content {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.benefits-card-content:hover {
+  border-color: rgba(3, 96, 171, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.benefits-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.benefits-eyebrow {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-magenta);
+}
+
+.benefits-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 16px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  transition: all var(--trans-fast);
+}
+
+.benefit-item:hover {
+  background-color: #ffffff;
+  border-color: rgba(3, 96, 171, 0.35);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-xs);
+}
+
+.benefit-item .benefit-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light-blue);
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: all var(--trans-fast);
+}
+
+.benefit-item:hover .benefit-icon-box {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+}
+
+.benefit-info h3 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.benefit-info p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.benefits-cta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 4px;
+  width: 100%;
+}
+
+.benefits-cta-box .btn {
+  width: 100%;
+}
+
+.benefits-micro-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. FICHA TÉCNICA / DETALLES CLAVE (Tarjetas Compañeras Simétricas)
+   -------------------------------------------------------------------------- */
+.specs-section {
+  padding: 96px 0;
+  background-color: var(--bg-light-blue);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.specs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Tarjeta Izquierda: Imagen del Baúl Abierto */
+.specs-card-media {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  height: 100%;
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.specs-card-media:hover {
+  border-color: rgba(3, 96, 171, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.specs-main-image-box {
+  width: 100%;
+  flex: 1;
+  min-height: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-xs);
+  background-color: #fafbfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.specs-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.specs-main-image-box:hover .specs-main-img {
+  transform: scale(1.025);
+}
+
+.specs-image-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: var(--bg-light-blue);
+  border-radius: var(--radius-sm);
+  color: var(--brand-blue);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid var(--brand-blue-border);
+}
+
+.specs-image-caption .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--brand-blue);
+}
+
+/* Tarjeta Derecha: Contenido y Especificaciones */
+.specs-card-content {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+  transition: border-color var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.specs-card-content:hover {
+  border-color: rgba(3, 96, 171, 0.28);
+  box-shadow: var(--shadow-md);
+}
+
+.specs-model-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.specs-eyebrow {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-magenta);
+}
+
+.specs-model-header h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+
+.specs-model-header p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.specs-rows-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.spec-data-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  border: 1px solid var(--border-light);
+  gap: 12px;
+}
+
+.spec-data-row:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.spec-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.spec-field .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--brand-blue);
+}
+
+.spec-value {
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: right;
+}
+
+.colors-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--bg-light-magenta);
+  color: var(--brand-magenta);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(192, 27, 131, 0.2);
+}
+
+.specs-cta-box {
+  width: 100%;
+  padding-top: 4px;
+}
+
+.specs-cta-box .btn {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIÓN FAQ (CON CIERRE CTA INTEGRADO)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding: 88px 0 60px 0;
+  background-color: var(--bg-primary);
+}
+
+.faq-accordion-list {
+  max-width: 820px;
+  margin: 0 auto 56px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--trans-fast);
+}
+
+.faq-item:hover {
+  border-color: rgba(3, 96, 171, 0.3);
+}
+
+.faq-item.active {
+  border-color: var(--brand-blue);
+  box-shadow: 0 4px 16px rgba(3, 96, 171, 0.08);
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  gap: 16px;
+}
+
+.faq-trigger:hover {
+  color: var(--brand-blue);
+}
+
+.faq-icon-arrow {
+  font-size: 22px;
+  color: var(--brand-blue);
+  transition: transform var(--trans-normal);
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon-arrow {
+  transform: rotate(180deg);
+  color: var(--brand-magenta);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-content-inner {
+  padding: 0 24px 20px 24px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  border-top: 1px solid var(--border-light);
+  padding-top: 14px;
+}
+
+/* Bloque CTA Integrado Naturalmente al Cierre de FAQ */
+.faq-closing-cta-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #0360ab 0%, #00457d 100%);
+  border-radius: var(--radius-lg);
+  padding: 38px 44px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  box-shadow: var(--shadow-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-closing-cta-card::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(192, 27, 131, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.faq-closing-text h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.faq-closing-text p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.5;
+}
+
+.faq-closing-cta-card .btn {
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   STICKY MOBILE CONVERSION BAR
+   -------------------------------------------------------------------------- */
+.sticky-mobile-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-subtle);
+  box-shadow: 0 -4px 20px rgba(11, 28, 48, 0.08);
+  padding: 10px 18px calc(10px + env(safe-area-inset-bottom, 0px)) 18px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  z-index: 950;
+  transform: translateY(100%);
+  transition: transform var(--trans-normal);
+}
+
+.sticky-mobile-bar.visible {
+  transform: translateY(0);
+}
+
+.sticky-mobile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-mobile-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.sticky-mobile-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.sticky-mobile-bar .btn {
+  padding: 10px 18px;
+  font-size: 0.86rem;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.sticky-mobile-bar .whatsapp-icon-svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 560px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  
+  .hero-content-column {
+    width: 44%;
+    min-width: 340px;
+  }
+  
+  .hero-brand-standalone {
+    margin-bottom: 14px;
+  }
+  
+  .hero-card-panel {
+    width: 100%;
+    padding: 32px 26px;
+    border-radius: 22px;
+  }
+  
+  .hero-bg-img {
+    object-position: right top;
+  }
+  
+  .hero-title {
+    font-size: 2.1rem;
+  }
+  
+  /* Beneficios en Tablet */
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .benefits-card-media {
+    height: auto;
+    padding: 20px;
+  }
+  
+  .benefits-image-box {
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
+    min-height: 280px;
+  }
+  
+  .benefits-card-content {
+    height: auto;
+    padding: 32px 28px;
+  }
+  
+  /* Ficha Técnica en Tablet */
+  .specs-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .specs-card-media {
+    height: auto;
+    padding: 22px;
+  }
+  
+  .specs-main-image-box {
+    aspect-ratio: 16 / 10;
+    max-height: 360px;
+    min-height: 260px;
+  }
+  
+  .specs-card-content {
+    height: auto;
+    padding: 32px 28px;
+  }
+  
+  .faq-closing-cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  body {
+    padding-bottom: 74px;
+  }
+  
+  .sticky-mobile-bar {
+    display: flex;
+  }
+  
+  /* Hero en Móvil: Texto apilado arriba de forma compacta y fotografía 16:9 nítida abajo sin cubrir el producto */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 36px;
+    min-height: auto;
+    background-color: #ffffff;
+  }
+  
+  .hero-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    order: 1;
+    width: 100%;
+  }
+  
+  .hero-content-column {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  
+  .hero-brand-standalone {
+    margin-bottom: 12px;
+  }
+  
+  .hero-brand-logo {
+    height: 30px;
+    max-width: 150px;
+  }
+  
+  .hero-card-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .hero-bg-visual {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-subtle);
+    order: 2;
+  }
+  
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-ctas {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .hero-ctas .btn {
+    width: 100%;
+  }
+  
+  .hero-micro-trust {
+    gap: 12px;
+    padding-top: 14px;
+    max-width: 100%;
+  }
+  
+  /* Dolores en Móvil */
+  .pain-section {
+    padding: 64px 0;
+  }
+  
+  .pain-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .pain-card {
+    padding: 20px 18px;
+  }
+  
+  /* Beneficios en Móvil: Tarjetas apiladas limpias */
+  .benefits-section {
+    padding: 64px 0;
+  }
+  
+  .benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .benefits-card-media {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    gap: 12px;
+    height: auto;
+  }
+  
+  .benefits-image-box {
+    aspect-ratio: 16 / 10;
+    max-height: 300px;
+    min-height: auto;
+    width: 100%;
+  }
+  
+  .benefits-card-content {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+    gap: 20px;
+    height: auto;
+  }
+  
+  .benefits-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .benefit-item {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  
+  .benefit-item .benefit-icon-box {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+  
+  .benefits-cta-box {
+    align-items: center;
+    width: 100%;
+  }
+  
+  .benefits-cta-box .btn {
+    width: 100%;
+  }
+  
+  /* Ficha Técnica en Móvil */
+  .specs-section {
+    padding: 64px 0;
+  }
+  
+  .specs-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .specs-card-media {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    gap: 12px;
+    height: auto;
+  }
+  
+  .specs-main-image-box {
+    aspect-ratio: 16 / 10;
+    max-height: 280px;
+    min-height: auto;
+    width: 100%;
+  }
+  
+  .specs-card-content {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+    gap: 18px;
+    height: auto;
+  }
+  
+  .specs-model-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .spec-data-row {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+  
+  .specs-cta-box {
+    width: 100%;
+  }
+  
+  .specs-cta-box .btn {
+    width: 100%;
+  }
+  
+  /* FAQ Cierre en Móvil */
+  .faq-section {
+    padding: 56px 0 40px 0;
+  }
+  
+  .faq-accordion-list {
+    margin-bottom: 36px;
+  }
+  
+  .faq-trigger {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+  
+  .faq-content-inner {
+    padding: 0 18px 16px 18px;
+    font-size: 0.88rem;
+  }
+  
+  .faq-closing-cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+    gap: 20px;
+  }
+  
+  .faq-closing-cta-card .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .section-title {
+    font-size: 1.85rem;
+  }
+  
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .benefits-card-content,
+  .specs-card-content {
+    padding: 20px 14px;
+  }
+  
+  .spec-data-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+  
+  .spec-value {
+    text-align: left;
+    font-size: 0.84rem;
+  }
+}

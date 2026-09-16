@@ -1,0 +1,7 @@
+# Archivos grandes que exceden el límite de GitHub (100MB)
+*.pdf
+
+# Archivos de respaldo y temporales
+*.zip
+.DS_Store
+Thumbs.db
