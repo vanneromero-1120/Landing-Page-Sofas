@@ -6,7 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Configuración Global de WhatsApp
-  const WHATSAPP_PHONE = '573001234567'; // Reemplazar con el número oficial comercial
+  const WHATSAPP_PHONE = '573212815741'; // Número oficial comercial Pagureo (+57 321 281 5741)
   const WHATSAPP_DEFAULT_MSG = encodeURIComponent(
     'Hola Pagureo, estuve viendo el Sofá Multiconfort en su página web y quiero este sofá. Deseo recibir asesoría para mi compra.'
   );
